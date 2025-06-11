@@ -1,0 +1,26 @@
+#repositories:
+#  - name: stable
+#    url: https://charts.helm.sh/stable
+#repositories are not needed here as we are using a local chart
+
+environments:
+  dev:
+    values:
+      - ./helm-app/environments/values-dev.yaml
+  stage:
+    values:
+      - ./helm-app/environments/values-stage.yaml
+---
+releases:
+  - name: helm-release-dev
+    namespace: dev
+    chart: ./helm-app
+    values:
+      - ./helm-app/environments/values-dev.yaml
+  - name: helm-release-stage
+    namespace: stage
+    chart: ./helm-app
+    values:
+      - ./helm-app/environments/values-stage.yaml
+
+# we are declaring the values in the values.yaml file so we don't need to pass them here as set 

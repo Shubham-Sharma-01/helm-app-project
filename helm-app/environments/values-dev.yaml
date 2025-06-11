@@ -1,0 +1,26 @@
+deployment:
+  name: nginx-deployment-dev
+  namespace: dev
+  replicas: 1
+
+service:
+  name: nginx-service-dev
+  namespace: dev
+  type: NodePort
+  port: 80
+  nodePort: 30001
+
+containers:
+  name: nginx
+  image: nginx:latest
+  port: 80
+  env:
+    DB_USERNAME:
+      name: db-credentials-dev
+      key: username
+    DB_PASSWORD:
+      name: db-credentials-dev
+      key: password
+labels:
+  app: nginx
+  environment: dev 

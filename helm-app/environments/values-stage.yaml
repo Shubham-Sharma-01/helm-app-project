@@ -1,0 +1,26 @@
+deployment:
+  name: nginx-deployment-stage
+  namespace: stage
+  replicas: 2
+
+service:
+  name: nginx-service-stage
+  namespace: stage
+  type: NodePort
+  port: 80
+  nodePort: 30002
+
+containers:
+  name: nginx
+  image: nginx:stable
+  port: 80
+  env:
+    DB_USERNAME:
+      name: db-credentials-stage
+      key: username
+    DB_PASSWORD:
+      name: db-credentials-stage
+      key: password
+labels:
+  app: nginx
+  environment: stage 
