@@ -19,8 +19,6 @@ Project structure:
 │       └── tests
 └── helmfile.yaml
 
-. ├── README.md ├── helm-app │ ├── Chart.yaml │ ├── charts │ ├── environments │ │ ├── values-dev.yaml │ │ └── values-stage.yaml │ └── templates │ ├── _helpers.tpl │ ├── deployment.yaml │ ├── service.yaml │ ├── serviceaccount.yaml │ └── tests └── helmfile.yaml
-
 
 To manage the release using helmfile use the following commands : 
 
