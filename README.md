@@ -2,20 +2,7 @@
 this is for the project - manage deployments using helm
 This project has a helm chart, a helm file and two environments dev and stage as follows : 
 
-├── README.md
-├── helm-app
-│   ├── Chart.yaml
-│   ├── charts
-│   ├── environments
-│   │   ├── values-dev.yaml
-│   │   └── values-stage.yaml
-│   └── templates
-│       ├── _helpers.tpl
-│       ├── deployment.yaml
-│       ├── service.yaml
-│       ├── serviceaccount.yaml
-│       └── tests
-└── helmfile.yaml
+helm-app-project/ ├── README.md ├── helm-app/ │ ├── Chart.yaml │ ├── charts/ │ ├── environments/ │ │ ├── values-dev.yaml │ │ └── values-stage.yaml │ └── templates/ │ ├── _helpers.tpl │ ├── deployment.yaml │ ├── service.yaml │ ├── serviceaccount.yaml │ └── tests/ └── helmfile.yaml
 
 
 To manage the release using helmfile use the following commands : 
